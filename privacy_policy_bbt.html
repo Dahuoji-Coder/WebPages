@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        p {
+            margin: 8px 0;
+            color: #34495E;
+            line-height: 26px;
+        }
+
+        .paragraph {
+            text-indent: 2em;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        h4 {
+            color: #34495E;
+            text-align: center;
+            margin: 12px 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<h4>BBT使用的权限和用途</h4>
+<p class="paragraph">
+	1. 获取本地存储权限
+</p>
+<p class="paragraph">
+	BBT使用过程中不会联网，只有在生成图片并保存的时候需要本地存储权限，将图片为您保存到相册中，方便您的使用。
+</p>
+
+<script>
+    if (getQueryString("theme") === "10001"){
+        for (var i = 0; i < document.getElementsByTagName('p').length; i++) {
+            document.getElementsByTagName('p')[i].style.webkitTextFillColor= '#5E332D';
+        }
+        for (var i = 0; i < document.getElementsByTagName('h4').length; i++) {
+            document.getElementsByTagName('h4')[i].style.webkitTextFillColor= '#5E332D';
+        }
+    } else if (getQueryString("theme") === "10002"){
+        document.body.style.backgroundColor = '#282828';
+        for (var i = 0; i < document.getElementsByTagName('p').length; i++) {
+            document.getElementsByTagName('p')[i].style.webkitTextFillColor= '#B5B7C6';
+        }
+        for (var i = 0; i < document.getElementsByTagName('h4').length; i++) {
+            document.getElementsByTagName('h4')[i].style.webkitTextFillColor= '#B5B7C6';
+        }
+    }
+
+    /**
+     * 获取指定的URL参数值
+     * URL:http://www.quwan.com/index?name=tyler
+     * 参数：paramName URL参数
+     * 调用方法:getParam("name")
+     * 返回值:tyler
+     */
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+</script>
+</body>
+</html>
